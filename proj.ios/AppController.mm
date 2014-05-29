@@ -27,8 +27,9 @@ static AppDelegate s_sharedApplication;
                                       sharegroup: nil
                                    multiSampling: NO
                                  numberOfSamples: 0];
-
-    // Use RootViewController manage EAGLView 
+     [__glView setMultipleTouchEnabled:YES];
+   
+    // Use RootViewController manage EAGLView
     viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
     viewController.wantsFullScreenLayout = YES;
     viewController.view = __glView;

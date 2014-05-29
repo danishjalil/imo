@@ -40,6 +40,7 @@ bool Joystick::init()
         //////////////////////////////////////////////////////////////////////////
 
 		this->setTouchEnabled(true);
+        //CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, INT_MIN, true);
         velocity = CCPointZero;
 
         CCSprite *bg = CCSprite::create("joystick_background.png");

@@ -35,18 +35,25 @@ bool GameScene::init()
     {
         return false;
     }
-    
+CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 Player = CCSprite::create("puck.png");
+
+
 _enemy = Enemy::create();
+
 //Enemy =  CCSprite::create("puck.png");
 this->addChild(Player);
 joystick = Joystick::create();
+freeze = PowerButton::create();
 this->addChild(joystick);
 this->addChild(_enemy);
+this->addChild(freeze);
 //this->addChild(Enemy);
-CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+
 Player->cocos2d::CCNode::setPosition(winSize.width/2,winSize.height/2);
 Player->setScale(0.2);
+
+
 //Enemy->setScale(0.4);
 //Enemy->setPosition(ccp(200,400));
 //Enemy->setColor(ccc3(200, 200, 255));
@@ -69,6 +76,9 @@ int GameScene::getystate(){
 void GameScene::update(float dt) {
     
     //CCLOG("dt is %f",dt);
+    if(freeze->getIspressed())
+        CCLog("power button pressed");
+    
     CCPoint cords = joystick->getVelocity();
     if (cords.x !=0  && cords.y != 0) {
     CCLog("x velocity is  %f",cords.x);

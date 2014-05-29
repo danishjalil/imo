@@ -228,14 +228,17 @@
 		46513EB1187BFBA200B5ABE1 /* UITouchGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46513EAF187BFBA200B5ABE1 /* UITouchGroup.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		B6058AFA1935DB9900396A60 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6058AF81935DB9900396A60 /* GameScene.cpp */; };
-		B6058AFF1935E8CE00396A60 /* joystick_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B6058AFD1935E8CE00396A60 /* joystick_background.png */; };
-		B6058B001935E8CE00396A60 /* joystick_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B6058AFE1935E8CE00396A60 /* joystick_thumb.png */; };
 		B6058B061935EA5C00396A60 /* Joystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6058B041935EA5C00396A60 /* Joystick.cpp */; };
 		B6058B081935F39300396A60 /* puck.png in Resources */ = {isa = PBXBuildFile; fileRef = B6058B071935F39300396A60 /* puck.png */; };
 		B6FE0BB3193612B200DB6942 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6FE0BB1193612B200DB6942 /* Enemy.cpp */; };
 		B6FE0BB5193615BD00DB6942 /* Fenrir-ffx-enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FE0BB4193615BD00DB6942 /* Fenrir-ffx-enemy.png */; };
 		B6FE0BB81936544300DB6942 /* HikkupMonster-real.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FE0BB61936544300DB6942 /* HikkupMonster-real.png */; };
 		B6FE0BB91936544300DB6942 /* monkey-real.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FE0BB71936544300DB6942 /* monkey-real.png */; };
+		B6FE0BBD193714B300DB6942 /* joystick_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FE0BBA193714B300DB6942 /* joystick_background.png */; };
+		B6FE0BBE193714B300DB6942 /* joystick_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FE0BBB193714B300DB6942 /* joystick_thumb.png */; };
+		B6FE0BC1193714F500DB6942 /* power.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FE0BC0193714F500DB6942 /* power.png */; };
+		B6FE0BC419371A7600DB6942 /* PowerButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6FE0BC219371A7600DB6942 /* PowerButton.cpp */; };
+		B6FE0BC81937376100DB6942 /* new_enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FE0BC71937376100DB6942 /* new_enemy.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -727,8 +730,6 @@
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		B6058AF81935DB9900396A60 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = ../Classes/GameScene.cpp; sourceTree = "<group>"; };
 		B6058AF91935DB9900396A60 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = ../Classes/GameScene.h; sourceTree = "<group>"; };
-		B6058AFD1935E8CE00396A60 /* joystick_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = joystick_background.png; path = "../../../../../Desktop/joystick-cocos2d-x-master/src/Resources/joystick_background.png"; sourceTree = "<group>"; };
-		B6058AFE1935E8CE00396A60 /* joystick_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = joystick_thumb.png; path = "../../../../../Desktop/joystick-cocos2d-x-master/src/Resources/joystick_thumb.png"; sourceTree = "<group>"; };
 		B6058B041935EA5C00396A60 /* Joystick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Joystick.cpp; path = ../Classes/Joystick.cpp; sourceTree = "<group>"; };
 		B6058B051935EA5C00396A60 /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Joystick.h; path = ../Classes/Joystick.h; sourceTree = "<group>"; };
 		B6058B071935F39300396A60 /* puck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puck.png; sourceTree = "<group>"; };
@@ -737,6 +738,12 @@
 		B6FE0BB4193615BD00DB6942 /* Fenrir-ffx-enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fenrir-ffx-enemy.png"; sourceTree = "<group>"; };
 		B6FE0BB61936544300DB6942 /* HikkupMonster-real.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HikkupMonster-real.png"; sourceTree = "<group>"; };
 		B6FE0BB71936544300DB6942 /* monkey-real.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monkey-real.png"; sourceTree = "<group>"; };
+		B6FE0BBA193714B300DB6942 /* joystick_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick_background.png; sourceTree = "<group>"; };
+		B6FE0BBB193714B300DB6942 /* joystick_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick_thumb.png; sourceTree = "<group>"; };
+		B6FE0BC0193714F500DB6942 /* power.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = power.png; sourceTree = "<group>"; };
+		B6FE0BC219371A7600DB6942 /* PowerButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PowerButton.cpp; path = ../Classes/PowerButton.cpp; sourceTree = "<group>"; };
+		B6FE0BC319371A7600DB6942 /* PowerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerButton.h; path = ../Classes/PowerButton.h; sourceTree = "<group>"; };
+		B6FE0BC71937376100DB6942 /* new_enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_enemy.png; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -1279,6 +1286,8 @@
 				B6058AF91935DB9900396A60 /* GameScene.h */,
 				B6FE0BB1193612B200DB6942 /* Enemy.cpp */,
 				B6FE0BB2193612B200DB6942 /* Enemy.h */,
+				B6FE0BC219371A7600DB6942 /* PowerButton.cpp */,
+				B6FE0BC319371A7600DB6942 /* PowerButton.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1733,12 +1742,14 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6FE0BC71937376100DB6942 /* new_enemy.png */,
+				B6FE0BC0193714F500DB6942 /* power.png */,
+				B6FE0BBA193714B300DB6942 /* joystick_background.png */,
+				B6FE0BBB193714B300DB6942 /* joystick_thumb.png */,
 				B6FE0BB61936544300DB6942 /* HikkupMonster-real.png */,
 				B6FE0BB71936544300DB6942 /* monkey-real.png */,
 				B6FE0BB4193615BD00DB6942 /* Fenrir-ffx-enemy.png */,
 				B6058B071935F39300396A60 /* puck.png */,
-				B6058AFD1935E8CE00396A60 /* joystick_background.png */,
-				B6058AFE1935E8CE00396A60 /* joystick_thumb.png */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 				1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */,
@@ -1823,20 +1834,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6FE0BBE193714B300DB6942 /* joystick_thumb.png in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				B6FE0BB91936544300DB6942 /* monkey-real.png in Resources */,
 				B6FE0BB5193615BD00DB6942 /* Fenrir-ffx-enemy.png in Resources */,
-				B6058AFF1935E8CE00396A60 /* joystick_background.png in Resources */,
 				B6058B081935F39300396A60 /* puck.png in Resources */,
-				B6058B001935E8CE00396A60 /* joystick_thumb.png in Resources */,
+				B6FE0BC1193714F500DB6942 /* power.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
+				B6FE0BBD193714B300DB6942 /* joystick_background.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
+				B6FE0BC81937376100DB6942 /* new_enemy.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				B6FE0BB81936544300DB6942 /* HikkupMonster-real.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
@@ -1959,6 +1972,7 @@
 				15A3DA4A1682F826002FB0C5 /* CCControlButton.cpp in Sources */,
 				15A3DA4B1682F826002FB0C5 /* CCControlColourPicker.cpp in Sources */,
 				15A3DA4C1682F826002FB0C5 /* CCControlHuePicker.cpp in Sources */,
+				B6FE0BC419371A7600DB6942 /* PowerButton.cpp in Sources */,
 				375BD50F1868454E0024609E /* CCActionFrame.cpp in Sources */,
 				15A3DA4D1682F826002FB0C5 /* CCControlPotentiometer.cpp in Sources */,
 				15A3DA4E1682F826002FB0C5 /* CCControlSaturationBrightnessPicker.cpp in Sources */,

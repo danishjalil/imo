@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 #include "Joystick.h"
 #include "Enemy.h"
+#include "PowerButton.h"
 
 USING_NS_CC;
 
@@ -22,6 +23,7 @@ class GameScene : public cocos2d::CCLayer
     Joystick * joystick;
     CCSprite * Player;
     Enemy * _enemy;
+    PowerButton * freeze;
     int _xstate;
     int _ystate;
     
