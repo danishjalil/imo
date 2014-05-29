@@ -232,6 +232,10 @@
 		B6058B001935E8CE00396A60 /* joystick_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B6058AFE1935E8CE00396A60 /* joystick_thumb.png */; };
 		B6058B061935EA5C00396A60 /* Joystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6058B041935EA5C00396A60 /* Joystick.cpp */; };
 		B6058B081935F39300396A60 /* puck.png in Resources */ = {isa = PBXBuildFile; fileRef = B6058B071935F39300396A60 /* puck.png */; };
+		B6FE0BB3193612B200DB6942 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6FE0BB1193612B200DB6942 /* Enemy.cpp */; };
+		B6FE0BB5193615BD00DB6942 /* Fenrir-ffx-enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FE0BB4193615BD00DB6942 /* Fenrir-ffx-enemy.png */; };
+		B6FE0BB81936544300DB6942 /* HikkupMonster-real.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FE0BB61936544300DB6942 /* HikkupMonster-real.png */; };
+		B6FE0BB91936544300DB6942 /* monkey-real.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FE0BB71936544300DB6942 /* monkey-real.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -728,6 +732,11 @@
 		B6058B041935EA5C00396A60 /* Joystick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Joystick.cpp; path = ../Classes/Joystick.cpp; sourceTree = "<group>"; };
 		B6058B051935EA5C00396A60 /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Joystick.h; path = ../Classes/Joystick.h; sourceTree = "<group>"; };
 		B6058B071935F39300396A60 /* puck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puck.png; sourceTree = "<group>"; };
+		B6FE0BB1193612B200DB6942 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Enemy.cpp; path = ../Classes/Enemy.cpp; sourceTree = "<group>"; };
+		B6FE0BB2193612B200DB6942 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enemy.h; path = ../Classes/Enemy.h; sourceTree = "<group>"; };
+		B6FE0BB4193615BD00DB6942 /* Fenrir-ffx-enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fenrir-ffx-enemy.png"; sourceTree = "<group>"; };
+		B6FE0BB61936544300DB6942 /* HikkupMonster-real.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HikkupMonster-real.png"; sourceTree = "<group>"; };
+		B6FE0BB71936544300DB6942 /* monkey-real.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monkey-real.png"; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -1268,6 +1277,8 @@
 				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
 				B6058AF81935DB9900396A60 /* GameScene.cpp */,
 				B6058AF91935DB9900396A60 /* GameScene.h */,
+				B6FE0BB1193612B200DB6942 /* Enemy.cpp */,
+				B6FE0BB2193612B200DB6942 /* Enemy.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1722,6 +1733,9 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6FE0BB61936544300DB6942 /* HikkupMonster-real.png */,
+				B6FE0BB71936544300DB6942 /* monkey-real.png */,
+				B6FE0BB4193615BD00DB6942 /* Fenrir-ffx-enemy.png */,
 				B6058B071935F39300396A60 /* puck.png */,
 				B6058AFD1935E8CE00396A60 /* joystick_background.png */,
 				B6058AFE1935E8CE00396A60 /* joystick_thumb.png */,
@@ -1810,6 +1824,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
+				B6FE0BB91936544300DB6942 /* monkey-real.png in Resources */,
+				B6FE0BB5193615BD00DB6942 /* Fenrir-ffx-enemy.png in Resources */,
 				B6058AFF1935E8CE00396A60 /* joystick_background.png in Resources */,
 				B6058B081935F39300396A60 /* puck.png in Resources */,
 				B6058B001935E8CE00396A60 /* joystick_thumb.png in Resources */,
@@ -1822,6 +1838,7 @@
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
+				B6FE0BB81936544300DB6942 /* HikkupMonster-real.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1853,6 +1870,7 @@
 				15A3D90E1682F7D5002FB0C5 /* b2Settings.cpp in Sources */,
 				15A3D90F1682F7D5002FB0C5 /* b2StackAllocator.cpp in Sources */,
 				15A3D9101682F7D5002FB0C5 /* b2Timer.cpp in Sources */,
+				B6FE0BB3193612B200DB6942 /* Enemy.cpp in Sources */,
 				15A3D9111682F7D5002FB0C5 /* b2Body.cpp in Sources */,
 				15A3D9121682F7D5002FB0C5 /* b2ContactManager.cpp in Sources */,
 				15A3D9131682F7D5002FB0C5 /* b2Fixture.cpp in Sources */,

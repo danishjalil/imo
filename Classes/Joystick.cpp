@@ -8,6 +8,10 @@
 
 #define THUMB_RADIUS 26.0f
 
+int Joystick::_xstate = 1;
+int Joystick::_ystate = 1;
+
+
 static CCPoint convertCoordinate(CCPoint point){
     return CCDirector::sharedDirector()->convertToGL(point);
 }
@@ -56,6 +60,7 @@ bool Joystick::init()
 void Joystick::updateVelocity(CCPoint point)
 {
     // calculate Angle and length
+    
     float dx = point.x - kCenter.x;
     float dy = point.y - kCenter.y;
 
@@ -69,6 +74,19 @@ void Joystick::updateVelocity(CCPoint point)
     }
 
     velocity = CCPointMake(dx/JOYSTICK_RADIUS, dy/JOYSTICK_RADIUS);
+    
+    if(dx > 0)
+        Joystick::_xstate = 1;
+    if(dx < 0)
+        Joystick::_xstate = -1;
+    
+    if(dy > 0)
+        Joystick::_ystate = 1;
+    
+    if(dy < 0)
+        Joystick::_ystate = -1;
+    
+    
 
     if(distance>THUMB_RADIUS)
     {

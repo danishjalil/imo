@@ -12,13 +12,14 @@ public:
     virtual bool init();  
     CCPoint getVelocity() {return velocity;}
     CREATE_FUNC(Joystick);
+    static int _xstate;
+    static int _ystate;
 
 private:
 
     CCPoint kCenter;
     CCSprite *thumb;
     bool isPressed;
-
     CCPoint velocity;
 
     void updateVelocity(CCPoint point);

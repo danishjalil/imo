@@ -37,20 +37,31 @@ bool GameScene::init()
     }
     
 Player = CCSprite::create("puck.png");
-Enemy =  CCSprite::create("puck.png");
+_enemy = Enemy::create();
+//Enemy =  CCSprite::create("puck.png");
 this->addChild(Player);
 joystick = Joystick::create();
 this->addChild(joystick);
-this->addChild(Enemy);
+this->addChild(_enemy);
+//this->addChild(Enemy);
 CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 Player->cocos2d::CCNode::setPosition(winSize.width/2,winSize.height/2);
 Player->setScale(0.2);
-Enemy->setScale(0.4);
-Enemy->setPosition(ccp(200,400));
-Enemy->setColor(ccc3(200, 200, 255));
+//Enemy->setScale(0.4);
+//Enemy->setPosition(ccp(200,400));
+//Enemy->setColor(ccc3(200, 200, 255));
+_enemy->Ai_move(Player);
 this->scheduleUpdate();
 return true;
 
+}
+
+int GameScene::getxstate(){
+    return _xstate;
+}
+
+int GameScene::getystate(){
+    return _ystate;
 }
 
 
@@ -66,6 +77,21 @@ void GameScene::update(float dt) {
     
     float delx = cords.x * myvelocity;
     float dely = cords.y * myvelocity;
+    
+    _xstate = 0;
+    _ystate = 0;
+    
+    if(delx > 0)
+        _xstate = 1;
+    
+    if(delx < 0)
+        _xstate = -1;
+    
+    if(dely > 0)
+        _ystate = 1;
+    
+    if(dely < 0)
+        _ystate = -1;
     
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     float PlayerSpriteWidth = Player->getContentSize().width/2*Player->getScaleX();
