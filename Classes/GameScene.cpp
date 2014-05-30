@@ -39,15 +39,22 @@ CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 Player = CCSprite::create("puck.png");
 
 
-_enemy = Enemy::create();
+
 
 //Enemy =  CCSprite::create("puck.png");
 this->addChild(Player);
 joystick = Joystick::create();
 freeze = PowerButton::create();
+initialize_enemeies(2);
+
 this->addChild(joystick);
-this->addChild(_enemy);
+//this->addChild(_enemy);
 this->addChild(freeze);
+//this->addChild(_enemy2);
+
+
+//_enemy2->retain();
+//_enemy2->setSpritePosition(400, 60);
 //this->addChild(Enemy);
 
 Player->cocos2d::CCNode::setPosition(winSize.width/2,winSize.height/2);
@@ -57,7 +64,20 @@ Player->setScale(0.2);
 //Enemy->setScale(0.4);
 //Enemy->setPosition(ccp(200,400));
 //Enemy->setColor(ccc3(200, 200, 255));
-_enemy->Ai_move(Player);
+
+    for (int i = 0; i<enemies_array->count(); i++){
+        Enemy * myenemy = (Enemy*)(enemies_array->objectAtIndex(i));
+        this->addChild(myenemy);
+        myenemy->Ai_move(Player);
+    }
+    
+    
+Enemy * myenemy = (Enemy*)(enemies_array->objectAtIndex(0));
+myenemy->setSpritePosition(200, 130);
+
+//_enemy->Ai_move(Player);
+
+//_enemy2->Ai_move(Player);
 this->scheduleUpdate();
 return true;
 
@@ -76,6 +96,7 @@ int GameScene::getystate(){
 void GameScene::update(float dt) {
     
     //CCLOG("dt is %f",dt);
+  
     if(freeze->getIspressed())
         CCLog("power button pressed");
     
@@ -127,3 +148,28 @@ void GameScene::update(float dt) {
     
     
 }
+
+bool GameScene::initialize_enemeies(int num) {
+    enemies_array = CCArray::createWithCapacity(num);
+    
+    for (int i = 0 ; i < num ; i++ ){
+        auto _en = Enemy::create();
+        enemies_array->addObject(_en);
+    }
+    if(enemies_array->count() != num) {
+        return false;
+    }
+    enemies_array->retain();
+    
+    return true;
+    
+    
+}
+
+
+GameScene::~GameScene() {
+    
+    enemies_array->release();
+}
+
+

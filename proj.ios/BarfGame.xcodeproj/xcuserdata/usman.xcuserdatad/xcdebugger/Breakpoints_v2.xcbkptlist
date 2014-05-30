@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/Enemy.cpp"
-            timestampString = "423059085.280073"
+            filePath = "../Classes/GameScene.cpp"
+            timestampString = "423122597.387916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "Enemy::minCornerdist()"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "GameScene::init()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/Enemy.cpp"
-            timestampString = "423059085.280073"
+            filePath = "../Classes/GameScene.cpp"
+            timestampString = "423122597.387916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "Enemy::update(float dt)"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "GameScene::init()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

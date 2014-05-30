@@ -22,7 +22,9 @@ class GameScene : public cocos2d::CCLayer
     void update(float dt);
     Joystick * joystick;
     CCSprite * Player;
-    Enemy * _enemy;
+    //const int enemy_array_lenth = 2;
+    //std::vector<Enemy*> vec_enemies;
+    CCArray * enemies_array;
     PowerButton * freeze;
     int _xstate;
     int _ystate;
@@ -40,6 +42,10 @@ public:
     
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
+    
+    bool initialize_enemeies(int num);
+    
+    ~GameScene();
     
     // implement the "static node()" method manually
     CREATE_FUNC(GameScene);

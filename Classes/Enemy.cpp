@@ -8,6 +8,7 @@
 
 #include "Enemy.h"
 #include "Joystick.h"
+#include "time.h"
 #define enemyvel 70
 bool Enemy::init() {
     
@@ -32,6 +33,7 @@ void Enemy::update(float dt) {
     float player_posx = _player->getPositionX();
     float player_posy = _player->getPositionY();
     float mincornerdist = minCornerdist();
+    auto r = ((double) rand() / (RAND_MAX));
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     CCLog("X pos of enemy is %f", _enemy->getPositionX());
     CCLog ("Y pos of enemy is %f ", _enemy->getPositionY());
@@ -42,8 +44,8 @@ void Enemy::update(float dt) {
         float enemyposx =_enemy->getPositionX();
         float enemyposy = _enemy->getPositionY();
         
-        float dely = enemyvel * 0.1;
-        float delx = enemyvel * 0.1;
+        float dely = enemyvel * 0.2 * r;
+        float delx = enemyvel * 0.2 * r;
         int _xstate = Joystick::_xstate;
         int _ystate = Joystick::_ystate;
         
@@ -88,8 +90,8 @@ void Enemy::update(float dt) {
         float enemyposx =_enemy->getPositionX();
         float enemyposy = _enemy->getPositionY();
         
-        float dely = enemyvel * 0.1;
-        float delx = enemyvel * 0.15;
+        float dely = enemyvel * 0.1 * r;
+        float delx = enemyvel * 0.15 * r;
         
         if(closest_corner == corner1){
             if(checkvalidXmove(enemyposx - delx)){
@@ -212,6 +214,14 @@ float Enemy::distofpoints(float x1 , float y1 , float x2 , float y2 ){
     return dist;
     
 }
+
+
+void Enemy::setSpritePosition(float x , float y) {
+    _enemy->setPositionX(x);
+    _enemy->setPositionY(y);
+}
+
+
 
 
 

@@ -15,7 +15,8 @@ public:
     CREATE_FUNC(Enemy);
     void Ai_move(CCSprite*Player); // moves relative to the Player
     void update(float dt);
-    
+    void setSpritePosition(float x , float y);
+  
     
 private:
     CCSprite* _enemy;
@@ -26,6 +27,8 @@ private:
     float distofpoints(float x1 , float y1 , float x2 , float y2 );
     enum Corners {corner1, corner2, corner3,corner4};
     Corners closest_corner;
+   
+
 };
 
 
