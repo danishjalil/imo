@@ -28,6 +28,7 @@ class GameScene : public cocos2d::CCLayer
     PowerButton * freeze;
     int _xstate;
     int _ystate;
+    bool enemy_trapped;
     
 public:
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
@@ -37,6 +38,8 @@ public:
     
     int getystate();
     
+    
+    
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::CCScene* scene();
     
@@ -44,6 +47,7 @@ public:
     void menuCloseCallback(CCObject* pSender);
     
     bool initialize_enemeies(int num);
+    
     
     ~GameScene();
     

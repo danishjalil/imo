@@ -68,7 +68,7 @@ Player->setScale(0.2);
     for (int i = 0; i<enemies_array->count(); i++){
         Enemy * myenemy = (Enemy*)(enemies_array->objectAtIndex(i));
         this->addChild(myenemy);
-        myenemy->Ai_move(Player);
+        myenemy->Ai_move(Player,enemies_array);
     }
     
     
@@ -97,9 +97,26 @@ void GameScene::update(float dt) {
     
     //CCLOG("dt is %f",dt);
   
-    if(freeze->getIspressed())
-        CCLog("power button pressed");
-    
+    if(freeze->getIspressed()) {
+        
+      CCLog("power button pressed");
+      freeze->setIspressedfalse();
+        for (int i = 0; i< enemies_array->count() ; i++){
+            auto opacity = ((Enemy*)enemies_array->objectAtIndex(i))->getEnemyOpacity();
+            if(opacity < 230){
+                ((Enemy*)enemies_array->objectAtIndex(i))->_enemystate = frozen;
+                enemy_trapped = true;
+            }
+        }
+        if(enemy_trapped){
+        
+            for (int i = 0 ; i<enemies_array->count(); i++) {
+                if(((Enemy*)enemies_array->objectAtIndex(i))->_enemystate == evasion){
+                    ((Enemy*)enemies_array->objectAtIndex(i))->_enemystate = unfreezingFriend;
+                }
+        }
+        }
+    }
     CCPoint cords = joystick->getVelocity();
     if (cords.x !=0  && cords.y != 0) {
     CCLog("x velocity is  %f",cords.x);

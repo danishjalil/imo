@@ -20,25 +20,51 @@ bool Enemy::init() {
     _enemy = CCSprite::create("new_enemy.png");
     this->addChild(_enemy);
     _enemy ->setPosition(ccp(300,400));
+    //freezedEnemy = false;
+    _enemystate = evasion;
     return true;
 }
 
-void Enemy::Ai_move(CCSprite*Player){
+void Enemy::Ai_move(CCSprite*Player , CCArray * array){
     
 _player = Player;
+enemies_array = array;
  this->scheduleUpdate();
 }
 
 void Enemy::update(float dt) {
+    
+    if(_enemystate == frozen){
+        
+        return;
+    }
+    
+    test_enemystates();
+    
+    
     float player_posx = _player->getPositionX();
     float player_posy = _player->getPositionY();
     float mincornerdist = minCornerdist();
     auto r = ((double) rand() / (RAND_MAX));
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-    CCLog("X pos of enemy is %f", _enemy->getPositionX());
-    CCLog ("Y pos of enemy is %f ", _enemy->getPositionY());
+    //CCLog("X pos of enemy is %f", _enemy->getPositionX());
+    //CCLog ("Y pos of enemy is %f ", _enemy->getPositionY());
     float dist = sqrtf(pow((_enemy->getPositionX() - player_posx),2) + pow((_enemy->getPositionY() - player_posy),2));
-    CCLog("the dist is %f",dist);
+    //CCLog("the dist is %f",dist);
+    //CCFadeOut *fadeout = CCFadeOut::create(1.0f);
+    
+    if(_enemystate == evasion) {
+    
+    if (dist < 85) {
+        
+        _enemy->setOpacity(100);
+    }
+    
+    else {
+        
+        _enemy->setOpacity(255);
+        
+    }
     
     if(dist < 200 && mincornerdist > 135){
         float enemyposx =_enemy->getPositionX();
@@ -135,7 +161,62 @@ void Enemy::update(float dt) {
         
     }
     
+    }
+
+    if (_enemystate == unfreezingFriend) {
+        float myfriendx;
+        float myfriendy;
+        for(int i = 0 ; i<enemies_array->count(); i++){
+            Enemy * myfriend = (Enemy*)enemies_array->objectAtIndex(i);
+            if(myfriend->_enemystate == frozen) {
+                myfriendx = myfriend->getPositionX();
+                myfriendy = myfriend->getPositionY();
+                break;
+            }
+        }
+        float _enemyposx = _enemy->getPositionX();
+        float _enemyposy = _enemy->getPositionY();
+        
+        float dely = enemyvel * 0.25 * r;
+        float delx = enemyvel * 0.25 * r;
+        /*
+        if ((myfriendx - _enemyposx) < 0 ){
+            delx = -delx;
+        }
+        
+        if ((myfriendy - _enemyposy) > 0 ){
+            dely = -dely;
+        }
+        */
+        
+        float distx = myfriendx - _enemyposx;
+        float disty = myfriendy - _enemyposy;
+        
+        if( distx > 10) {
+            
+            _enemyposx = _enemyposx + delx;
+            
+        }
+        
+        if(distx < - 10) {
+            _enemyposx = _enemyposx - delx;
+        }
+        
+        
+        CCLog("the delx is %f " , delx);
+        CCLog("the dely is %f " , dely);
+        
+        
+        
+
+
+        //_enemy->cocos2d::CCNode::setPosition( (_enemyposx + delx), (_enemyposy + dely) );
+    
+    }
+
+
 }
+
 
 
 bool Enemy::checkvalidXmove(float posx){
@@ -220,6 +301,39 @@ void Enemy::setSpritePosition(float x , float y) {
     _enemy->setPositionX(x);
     _enemy->setPositionY(y);
 }
+
+
+GLubyte Enemy::getEnemyOpacity() {
+   return (_enemy->getOpacity());
+    
+}
+
+Enemy_states Enemy::getEnemyState(){
+    
+    return _enemystate;
+}
+
+void Enemy::test_enemystates() {
+    for(int i = 0 ; i < enemies_array->count(); i++){
+        auto myfriend = (Enemy*)enemies_array->objectAtIndex(i);
+        if(myfriend->_enemystate == frozen){
+            CCLog("Frozen");
+        }
+        if(myfriend->_enemystate == evasion){
+            CCLog("evasion");
+        }
+        
+        if(myfriend->_enemystate == unfreezingFriend){
+            CCLog("unfreezing friend");
+        }
+        
+    
+    }
+    
+    
+}
+
+
 
 
 

@@ -24,6 +24,7 @@ public:
     CREATE_FUNC(PowerButton);
     CCSprite * _powerbutton;
     bool getIspressed();
+    void setIspressedfalse();
     
     
 private:

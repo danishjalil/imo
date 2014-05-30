@@ -43,7 +43,7 @@ void PowerButton::ccTouchesBegan( CCSet *pTouches, CCEvent *pEvent )
 
 void PowerButton::ccTouchesEnded (CCSet *pTouches, CCEvent *pEvent )
 {
-    isPressed = false;
+    //isPressed = false;
     
 }
 
@@ -52,5 +52,9 @@ bool PowerButton::getIspressed() {
     return isPressed;
 }
 
+
+void PowerButton::setIspressedfalse () {
+    isPressed = false;
+}
 
 
